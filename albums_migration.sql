@@ -10,3 +10,7 @@ CREATE TABLE IF NOT EXISTS albums (
     genre VARCHAR(150),
     PRIMARY KEY (id)
 );
+
+DESCRIBE albums;
+
+SHOW CREATE TABLE albums;
