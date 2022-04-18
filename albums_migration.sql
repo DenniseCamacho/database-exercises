@@ -11,6 +11,18 @@ CREATE TABLE IF NOT EXISTS albums (
     PRIMARY KEY (id)
 );
 
+INSERT INTO albums (artist, name, release_date, sales, genre)
+VALUES ('Travis Dupri', 'Album01', 2020, 1000000, 'hip hop, rnb'),
+       ('TG AGAPE', 'Album02', 2021, 1000000, 'hip hop'),
+       ('HAVI', 'Album03', 2020, 1000000, 'hip hop, rnb'),
+       ('NOBIGDYL', 'Album04', 2020, 10000000, 'hip hop, rnb, rap'),
+       ('BRIGHT', 'Album05', 2020, 1000000, 'dance, electronica'),
+       ('Kutless', 'Album06', 2020, 1000000, 'alternative rock'),
+       ('Wolves at the Gate', 'Album07', 2020, 1000000, 'heavy metal'),
+       ('Silent Planet', 'Album08', 2020, 1000000, 'heavy metal'),
+       ('Red', 'Album09', 2020, 1000000, 'Rock'),
+       ('Skillet', 'Album10', 2020, 1000000, 'Rock');
+
 DESCRIBE albums;
 
 SHOW CREATE TABLE albums;
