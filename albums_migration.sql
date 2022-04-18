@@ -21,7 +21,12 @@ VALUES ('Travis Dupri', 'Album01', 2020, 1000000, 'hip hop, rnb'),
        ('Wolves at the Gate', 'Album07', 2020, 1000000, 'heavy metal'),
        ('Silent Planet', 'Album08', 2020, 1000000, 'heavy metal'),
        ('Red', 'Album09', 2020, 1000000, 'Rock'),
-       ('Skillet', 'Album10', 2020, 1000000, 'Rock');
+       ('Skillet', 'Album10', 2020, 1000000, 'Rock'),
+       ('Skillet', 'Album10', 1992, 1000000, 'Rock');
+
+DELETE FROM albums WHERE release_date < 2000; #deletes all under 2000
+
+SELECT 'albums' as prefix , a.* FROM albums a WHERE release_date > 2021;
 
 DESCRIBE albums;
 
