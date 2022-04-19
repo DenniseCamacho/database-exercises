@@ -25,6 +25,14 @@ FROM employees
 WHERE first_name IN ('Irena', 'Vidya', 'Maya')
 ORDER BY last_name, first_name;
 
+# Update your queries for employees with 'e'
+# in their last name to sort the results by
+# their employee number. Make sure the employee
+# numbers are in the correct order.
+SELECT *
+FROM employees
+WHERE last_name LIKE '%e%'
+ORDER BY emp_no;
 
 SELECT last_name FROM employees
 WHERE last_name LIKE 'E%';
