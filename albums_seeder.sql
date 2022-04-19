@@ -1,5 +1,5 @@
 USE codeup_test_db;
-
+TRUNCATE albums;
 INSERT INTO albums(artist, name, release_date, sales, genre)
 VALUES
     ('Michael Jackson', 'Thriller', 1982,  49200000,
@@ -67,5 +67,7 @@ VALUES
      'Hard rock'),
     ('Elton John', 'Goodbye Yellow Brick Road', 1973, 8500000,
      'rock, pop rock, glam rock');
+
+
 
 
