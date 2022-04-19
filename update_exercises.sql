@@ -17,5 +17,5 @@ UPDATE albums SET artist = 'Peter Jackson' WHERE artist = 'Michael Jackson';
 # SET artist = 'Peter Jackson'
 # WHERE artist = 'Michael Jackson';
 SELECT * FROM albums;
-
+# where artist = 'Michael Jackson' OR artist = 'Peter Jackson';
 # select * albums;

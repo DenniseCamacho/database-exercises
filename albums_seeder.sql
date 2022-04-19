@@ -1,5 +1,5 @@
 USE codeup_test_db;
-TRUNCATE albums;
+TRUNCATE albums; #removes, ends up with same number, prevents copies
 INSERT INTO albums(artist, name, release_date, sales, genre)
 VALUES
     ('Michael Jackson', 'Thriller', 1982,  49200000,
