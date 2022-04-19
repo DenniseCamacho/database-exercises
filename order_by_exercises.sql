@@ -1,18 +1,23 @@
 USE employees;
-# Find all employees with first names 'Irena', 'Vidya',
-# or 'Maya' — 709 rows (Hint: Use IN).
+
+# Modify your first query to order by first name.
+# The first result should be Irena Flexer
+# and the last result should be Vidya Awdeh.
 SELECT *
 FROM employees
 WHERE first_name IN ('Irena', 'Vidya', 'Maya')
 ORDER BY first_name ASC;
-# Modify your first query to order by first name.
-# The first result should be Irena Flexer
-# and the last result should be Vidya Awdeh.
 
 
-#     Find all employees whose
-#     last name starts with 'E'
-#     — 7,330 rows.
+# Update the query to order by first name and then last name.
+# The first result should now be
+# Irena Acton and the last should be Vidya Zweizig.
+SELECT *
+FROM employees
+WHERE first_name IN ('Irena', 'Vidya', 'Maya')
+ORDER BY first_name, last_name;
+
+
 SELECT last_name FROM employees
 WHERE last_name LIKE 'E%';
 
