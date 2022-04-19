@@ -22,3 +22,10 @@ FROM employees
 WHERE first_name LIKE 'Irena'
 OR first_name LIKE 'Vidya'
 OR first_name LIKE 'Maya';
+
+# Add a condition to the previous query to
+# find everybody with those names who is also male — 441 rows.
+SELECT first_name
+FROM employees
+WHERE gender = 'M'
+    AND first_name IN ('Irena', 'Vidya', 'Maya');
