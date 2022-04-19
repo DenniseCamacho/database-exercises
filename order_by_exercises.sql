@@ -3,7 +3,12 @@ USE employees;
 # or 'Maya' — 709 rows (Hint: Use IN).
 SELECT *
 FROM employees
-WHERE first_name IN ('Irena', 'Vidya', 'Maya');
+WHERE first_name IN ('Irena', 'Vidya', 'Maya')
+ORDER BY first_name ASC;
+# Modify your first query to order by first name.
+# The first result should be Irena Flexer
+# and the last result should be Vidya Awdeh.
+
 
 #     Find all employees whose
 #     last name starts with 'E'
@@ -49,3 +54,4 @@ SELECT *
 FROM employees
 WHERE last_name LIKE '%q%'
   AND last_name NOT LIKE '%qu%';
+
