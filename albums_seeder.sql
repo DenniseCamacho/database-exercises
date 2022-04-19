@@ -22,7 +22,7 @@ VALUES
      'soft rock'),
     ('Shania Twain', 'Come On Over', 1997, 29600000,
      'country, pop'),
-    ('Various artists', 'Grease: The Original Soundtrack', 1978, 14400000,
+    ('One Greaser', 'Grease: The Original Soundtrack', 1978, 14400000,
      'rock and roll'),
     ('Led Zeppelin', 'Led Zeppelin IV', 1971, 29000000,
      'hard rock, heavy metal, folk rock'),
@@ -36,7 +36,7 @@ VALUES
      'pop, soft rock'),
     ('The Beatles', 'Sgt. Pepper\'s Lonely Hearts Club Band', 1967, 18200000,
      'rock'),
-    ('Various artists', 'Dirty Dancing', 1987, 17900000,
+    ('One Singer', 'Dirty Dancing', 1987, 17900000,
      'Pop, rock, R&B'),
     ('Adele', '21', 2011, 26400000,
      'Pop, soul'),
@@ -63,11 +63,9 @@ VALUES
      'Grunge, alternative rock'),
     ('Santana', 'Supernatural', 1999, 20500000,
      'Latin rock'),
-    ('Guns N\' Roses', 'Appetite for Destruction', 1987, 21900000, 'Hard rock'),
-    ('Elton John', 'Goodbye Yellow Brick Road', 1973, 8500000, 'rock, pop rock, glam rock');
+    ('Guns N\' Roses', 'Appetite for Destruction', 1987, 21900000,
+     'Hard rock'),
+    ('Elton John', 'Goodbye Yellow Brick Road', 1973, 8500000,
+     'rock, pop rock, glam rock');
 
-
-
-#
-# Use INSERT to add records for all the albums from this list on Wikipedia that claim over 30 million sales #(the first two tables). For sales data, use the 'sales certification' column of the tables, not 'claimed #sales'. For artists listed with 'Various Artists', just use the primary artist's name.
 
