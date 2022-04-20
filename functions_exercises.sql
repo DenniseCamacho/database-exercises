@@ -19,16 +19,22 @@ WHERE birth_date
 LIKE '%-12-25';
 
 # 4.Find all employees hired in the 90s and born on Christmas — 362 rows.
-
 SELECT COUNT(*)
 FROM employees
 WHERE MONTH(birth_date) = 12
 AND DAY(birth_date) = 25
 AND hire_date LIKE '199%';
 
-# Change the query for employees hired in the 90s and born on Christmas such that the first result is the oldest employee who was hired last. It should be Khun Bernini.
+#5. Change the query for employees hired in the 90s and born on Christmas such that the first result is the oldest employee who was hired last. It should be Khun Bernini.
+SELECT first_name, last_name
+FROM employees
+WHERE MONTH(birth_date) = 12
+AND DAY(birth_date) = 25
+AND hire_date LIKE '199%'
+ORDER BY birth_date, hire_date DESC;
 
-# For your query of employees born on Christmas and hired in the 90s, use datediff() to find how many days they have been working at the company (Hint: You might also need to use now() or curdate()).
+
+#6. For your query of employees born on Christmas and hired in the 90s, use datediff() to find how many days they have been working at the company (Hint: You might also need to use now() or curdate()).
 
 SELECT *
 FROM employees
