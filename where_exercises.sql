@@ -9,7 +9,7 @@ WHERE first_name IN ('Irena', 'Vidya', 'Maya');
 #     last name starts with 'E'
 #     — 7,330 rows.
 SELECT last_name FROM employees
-WHERE last_name LIKE 'E%';
+WHERE last_name LIKE 'E%'; #not case sensitive
 
 # Find all employees with a 'q' in their last name — 1,873 rows.
 SELECT last_name FROM employees
@@ -19,16 +19,18 @@ WHERE last_name LIKE '%q%';
 # or 'Maya' to use OR instead of IN — 709 rows.
 SELECT *
 FROM employees
-WHERE first_name LIKE 'Irena'
-OR first_name LIKE 'Vidya'
-OR first_name LIKE 'Maya';
+WHERE first_name = 'Irena'
+OR first_name = 'Vidya'
+OR first_name = 'Maya';
 
 # Add a condition to the previous query to
 # find everybody with those names who is also male — 441 rows.
-SELECT first_name
+SELECT *
 FROM employees
-WHERE gender = 'M'
-    AND first_name IN ('Irena', 'Vidya', 'Maya');
+WHERE (first_name = 'Irena'
+   OR first_name = 'Vidya'
+   OR first_name = 'Maya') #paranthesis means any of them need to be male
+    AND gender = 'M';
 
 # Find all employees whose last name starts or ends with 'E' — 30,723 rows.
 SELECT *
@@ -41,8 +43,10 @@ OR last_name like '%E';
 # starts and ends with 'E' — 899 rows.
 SELECT *
 FROM employees
-WHERE last_name like 'E%'
-   AND last_name like '%E';
+WHERE last_name
+    like 'E%'
+    AND last_name
+    like '%E';
 
 # Find all employees with a 'q' in their last name but not 'qu' — 547 rows.
 SELECT *
