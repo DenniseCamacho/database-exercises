@@ -35,8 +35,8 @@ WHERE (first_name = 'Irena'
 # Find all employees whose last name starts or ends with 'E' — 30,723 rows.
 SELECT *
 FROM employees
-WHERE last_name like 'E%'
-OR last_name like '%E';
+WHERE last_name LIKE 'E%'
+OR last_name LIKE '%E';
 
 # Duplicate the previous query and update it
 # to find all employees whose last name
@@ -44,9 +44,9 @@ OR last_name like '%E';
 SELECT *
 FROM employees
 WHERE last_name
-    like 'E%'
+    LIKE 'E%'
     AND last_name
-    like '%E';
+    LIKE '%E'; #or 'E%E' shorter.
 
 # Find all employees with a 'q' in their last name but not 'qu' — 547 rows.
 SELECT *
