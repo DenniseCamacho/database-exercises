@@ -1,9 +1,10 @@
 USE employees;
+
 SELECT DISTINCT title FROM titles;
 
 # List the first 10 distinct last name sorted
 #     in descending order.
-select DISTINCT last_name
+SELECT DISTINCT last_name
 FROM employees
 ORDER BY last_name DESC
 LIMIT 10 OFFSET 0;
@@ -17,7 +18,7 @@ LIMIT 10 OFFSET 0;
 # 254466
 # 47978
 # 253939
-SELECT * FROM salaries
+SELECT emp_no, salary FROM salaries
 ORDER BY salary DESC
 LIMIT 5 OFFSET 0;
 
@@ -30,7 +31,8 @@ LIMIT 5 OFFSET 0;
 # 66793
 # 492164
 # starts with every 5 * 10 = 50... but - 5 because first page is 0? so 5 * 9?
-SELECT *
+#offset = pages * limit - limit  10 * 5 - 5
+SELECT emp_no
 FROM salaries
 ORDER BY salary DESC
 LIMIT 5 OFFSET 45;
