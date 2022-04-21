@@ -10,7 +10,6 @@ FROM employees as e
 
 # write a query that shows each department
 # along with the name of the current manager for that department.
-
 SELECT d.dept_name AS 'Department Name',
 CONCAT(e.first_name, ' ', e.last_name) AS Name
 FROM departments d
@@ -20,6 +19,14 @@ WHERE to_date LIKE '9%'
 ORDER BY dept_name;
 
 # Find the name of all departments currently managed by women.
+SELECT d.dept_name AS 'Department Name',
+       CONCAT(e.first_name, ' ', e.last_name) AS Name
+FROM departments d
+         JOIN dept_manager dm on d.dept_no = dm.dept_no
+         JOIN employees e on e.emp_no = dm.emp_no
+WHERE to_date LIKE '9%'
+AND gender = 'F'
+ORDER BY dept_name;
 
 # Find the current titles of employees currently working in the Customer Service department.
 
