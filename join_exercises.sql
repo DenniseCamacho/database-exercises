@@ -12,22 +12,34 @@ FROM employees as e
 # along with the name of the current manager for that department.
 SELECT d.dept_name AS 'Department Name',
 CONCAT(e.first_name, ' ', e.last_name) AS Name
-FROM departments d
-JOIN dept_manager dm on d.dept_no = dm.dept_no
-JOIN employees e on e.emp_no = dm.emp_no
-WHERE to_date LIKE '9%'
-ORDER BY dept_name;
+    FROM departments d
+    JOIN dept_manager dm on d.dept_no = dm.dept_no
+    JOIN employees e on e.emp_no = dm.emp_no
+    WHERE to_date LIKE '9%'
+    ORDER BY dept_name;
 
 # Find the name of all departments currently managed by women.
 SELECT d.dept_name AS 'Department Name',
-       CONCAT(e.first_name, ' ', e.last_name) AS Name
-FROM departments d
-         JOIN dept_manager dm on d.dept_no = dm.dept_no
-         JOIN employees e on e.emp_no = dm.emp_no
-WHERE to_date LIKE '9%'
-AND gender = 'F'
-ORDER BY dept_name;
+CONCAT(e.first_name, ' ', e.last_name) AS Name
+    FROM departments d
+    JOIN dept_manager dm ON d.dept_no = dm.dept_no
+    JOIN employees e ON e.emp_no = dm.emp_no
+    WHERE to_date LIKE '9%'
+    AND gender = 'F'
+    ORDER BY dept_name;
 
 # Find the current titles of employees currently working in the Customer Service department.
+SELECT title AS 'Titles', COUNT(title) AS 'Total'
+FROM titles
+GROUP BY title;
+
+SELECT title AS 'Titles', COUNT(title) AS 'Total'
+FROM titles t JOIN dept_emp de ON t.emp_no = de.emp_no
+WHERE dept_no = 'd009'
+AND t.to_date LIKE '9%'
+AND de.to_date LIKE '9%'
+GROUP BY title;
+
+
 
 # Find the current salary of all current managers.
