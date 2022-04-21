@@ -43,3 +43,14 @@ GROUP BY title;
 
 
 # Find the current salary of all current managers.
+
+SELECT d.dept_name AS 'Department Name',
+       CONCAT(first_name, ' ', last_name) AS 'Department Manager',
+       s.salary AS 'Salary'
+FROM departments d
+JOIN dept_manager dm ON d.dept_no = dm.dept_no
+JOIN employees e ON dm.emp_no = e.emp_no
+JOIN salaries s ON e.emp_no = s.emp_no
+WHERE dm.to_date LIKE '9%'
+AND s.to_date LIKE '9%'
+ORDER BY dept_name;
