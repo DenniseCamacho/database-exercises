@@ -54,15 +54,13 @@ AND s.to_date LIKE '9%'
 ORDER BY dept_name;
 
 # Bonus Find the names of all current employees, their department name, and their current manager's name .
-SELECT CONCAT(e2.first_name, ' ', e2.last_name) AS 'Employee',
-       d.dept_name AS 'Department',
-       CONCAT(e.first_name, ' ', e.last_name) AS 'Manager'
-
+SELECT CONCAT(e.first_name, ' ', e.last_name) AS 'Employee',
+                                 d.dept_name AS 'Department',
+       CONCAT(e2.first_name, ' ', e2.last_name) AS 'Manager'
 FROM employees e
     JOIN dept_emp de on e.emp_no = de.emp_no
     JOIN departments d on d.dept_no = de.dept_no
     JOIN dept_manager dm on d.dept_no = dm.dept_no
-    JOIN employees e2 ON dm.emp_no = e.emp_no
-WHERE dm.to_date LIKE '9%'
-ORDER BY Manager DESC, Department;
-
+    JOIN employees e2 ON dm.emp_no = e2.emp_no
+WHERE YEAR(de.to_date) = '9999%'
+  AND YEAR(dm.to_date) = '9999%';
