@@ -1,8 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="limit_exercises.sql" type="DatabaseScript" editBeforeRun="true" singleton="false" nameIsGenerated="true">
-    <script-file value="$PROJECT_DIR$/limit_exercises.sql" />
-    <script-mode>FILE</script-mode>
-    <data-source id="6483ca2b-ee6d-4829-a1a9-896a369987c4" namespace="schema/&quot;employees&quot;" />
-    <method v="2" />
-  </configuration>
-</component>
