@@ -41,16 +41,26 @@ AND de.to_date LIKE '9%'
 GROUP BY title;
 
 
-
 # Find the current salary of all current managers.
-
 SELECT d.dept_name AS 'Department Name',
        CONCAT(first_name, ' ', last_name) AS 'Department Manager',
        s.salary AS 'Salary'
 FROM departments d
-JOIN dept_manager dm ON d.dept_no = dm.dept_no
-JOIN employees e ON dm.emp_no = e.emp_no
-JOIN salaries s ON e.emp_no = s.emp_no
+        JOIN dept_manager dm ON d.dept_no = dm.dept_no
+        JOIN employees e ON dm.emp_no = e.emp_no
+        JOIN salaries s ON e.emp_no = s.emp_no
 WHERE dm.to_date LIKE '9%'
 AND s.to_date LIKE '9%'
 ORDER BY dept_name;
+
+# Bonus Find the names of all current employees, their department name, and their current manager's name .
+SELECT CONCAT(first_name, ' ', last_name) AS 'Employee',
+       d.dept_name AS 'Department',
+       CONCAT(first_name, ' ', last_name) AS 'Manager'
+
+FROM employees e
+    JOIN dept_emp de on e.emp_no = de.emp_no
+    JOIN departments d on de.dept_no = d.dept_no
+WHERE to_date LIKE '9%';
+
+
