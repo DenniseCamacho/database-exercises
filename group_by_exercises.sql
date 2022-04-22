@@ -34,12 +34,12 @@ GROUP BY first_name, last_name;
 SELECT DISTINCT last_name
 FROM employees
 WHERE last_name LIKE '%q%'
-AND last_name NOT LIKE '%qu%';
+  AND last_name NOT LIKE '%qu%';
 #ans:
 SELECT last_name
 FROM employees
 WHERE last_name LIKE '%q%'
-AND last_name NOT LIKE '%qu%'
+  AND last_name NOT LIKE '%qu%'
 GROUP BY last_name;
 
 # Add a COUNT() to your results and use ORDER BY

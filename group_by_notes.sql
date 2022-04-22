@@ -1,16 +1,23 @@
 USE employees;
 
-select first_name FROM employees GROUP BY first_name;
+select first_name
+FROM employees
+GROUP BY first_name;
 # SELECT first_name, last_name FROM employees GROUP BY first_name; #[n]
 #grouping by first names...doesnt make sense to add last_name
-select first_name, AVG(LENGTH(last_name)) FROM employees GROUP BY first_name; #[y]
+select first_name, AVG(LENGTH(last_name))
+FROM employees
+GROUP BY first_name;
+#[y]
 
 #find common name
 # select concat(first_name, ' ', last_name) from employees;[x];
-SELECT CONCAT(first_name, ' ', last_name) FROM employees
+SELECT CONCAT(first_name, ' ', last_name)
+FROM employees
 GROUP BY first_name, last_name;
 
-SELECT CONCAT(first_name, ' ', last_name), COUNT(*) FROM employees
+SELECT CONCAT(first_name, ' ', last_name), COUNT(*)
+FROM employees
 GROUP BY first_name, last_name;
 
 SELECT CONCAT(first_name, ' ', last_name), COUNT(*)
@@ -50,9 +57,9 @@ FROM salaries;
 #
 # A having clause is a way to use aggregate results as if in a where clause.
 
-select first_name, AVG(LENGTH(last_name)) from employees GROUP BY first_name;
-
-
+select first_name, AVG(LENGTH(last_name))
+from employees
+GROUP BY first_name;
 
 
 
@@ -78,11 +85,13 @@ GROUP BY title;
 
 # What gender are all the employees?
 SELECT gender
-FROM employees; # all genders of all employees listed
+FROM employees;
+# all genders of all employees listed
 
 # How many unique genders are recorded in this company?
 SELECT DISTINCT gender
-FROM employees; # all distinct genders in company
+FROM employees;
+# all distinct genders in company
 
 # What the groups created for each gender?
 SELECT gender
@@ -100,7 +109,8 @@ FROM employees
 GROUP BY hire_date
 ORDER BY COUNT(*) DESC;
 
-select MIN(salary) from salaries;
+select MIN(salary)
+from salaries;
 
 # How many salaries are at a given amount?
 SELECT salary, COUNT(*)

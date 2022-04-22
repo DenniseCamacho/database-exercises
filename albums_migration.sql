@@ -1,13 +1,14 @@
 USE codeup_test_db;
 DROP TABLE IF EXISTS albums;
 
-CREATE TABLE IF NOT EXISTS albums (
-    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    artist VARCHAR(100) NOT NULL,
-    name VARCHAR(50) NOT NULL,
+CREATE TABLE IF NOT EXISTS albums
+(
+    id           INT UNSIGNED   NOT NULL AUTO_INCREMENT,
+    artist       VARCHAR(100)   NOT NULL,
+    name         VARCHAR(50)    NOT NULL,
     release_date INT UNSIGNED,
-    sales FLOAT UNSIGNED NOT NULL,
-    genre VARCHAR(150),
+    sales        FLOAT UNSIGNED NOT NULL,
+    genre        VARCHAR(150),
     PRIMARY KEY (id)
 );
 
@@ -26,7 +27,9 @@ CREATE TABLE IF NOT EXISTS albums (
 #
 # DELETE FROM albums WHERE release_date < 2000; #deletes all under 2000
 
-SELECT 'albums' as prefix , a.* FROM albums a WHERE release_date > 2021;
+SELECT 'albums' as prefix, a.*
+FROM albums a
+WHERE release_date > 2021;
 
 DESCRIBE albums;
 

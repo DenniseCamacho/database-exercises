@@ -1,6 +1,7 @@
 USE employees;
 
-SELECT DISTINCT title FROM titles;
+SELECT DISTINCT title
+FROM titles;
 
 # List the first 10 distinct last name sorted
 #     in descending order.
@@ -18,7 +19,8 @@ LIMIT 10 OFFSET 0;
 # 254466
 # 47978
 # 253939
-SELECT emp_no, salary FROM salaries
+SELECT emp_no, salary
+FROM salaries
 ORDER BY salary DESC
 LIMIT 5 OFFSET 0;
 

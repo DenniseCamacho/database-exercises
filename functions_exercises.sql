@@ -11,37 +11,37 @@ WHERE last_name like 'E%E';
 SELECT COUNT(*)
 FROM employees
 WHERE MONTH(birth_date) = 12
-AND DAY(birth_date) = 25;
+  AND DAY(birth_date) = 25;
 #or
 SELECT COUNT(*)
 FROM employees
 WHERE birth_date
-LIKE '%-12-25';
+          LIKE '%-12-25';
 
 # 4.Find all employees hired in the 90s and born on Christmas — 362 rows.
 SELECT COUNT(*)
 FROM employees
 WHERE MONTH(birth_date) = 12
-AND DAY(birth_date) = 25
-AND hire_date LIKE '199%';
+  AND DAY(birth_date) = 25
+  AND hire_date LIKE '199%';
 
 #5. Change the query for employees hired in the 90s and born on Christmas such that the first result is the oldest employee who was hired last. It should be Khun Bernini.
 SELECT first_name, last_name
 FROM employees
 WHERE MONTH(birth_date) = 12
-AND DAY(birth_date) = 25
-AND hire_date LIKE '199%'
+  AND DAY(birth_date) = 25
+  AND hire_date LIKE '199%'
 ORDER BY birth_date, hire_date DESC;
 
 
 #6. For your query of employees born on Christmas and hired in the 90s, use datediff() to find how many days they have been working at the company (Hint: You might also need to use now() or curdate()).
 SELECT CONCAT('Days in company: ', DATEDIFF(NOW(), hire_date))
-    AS `Days at company`,
-    CONCAT(first_name, ' ',last_name)
-        AS `Name`
+           AS `Days at company`,
+       CONCAT(first_name, ' ', last_name)
+           AS `Name`
 FROM employees
 WHERE hire_date LIKE '199%'
-AND birth_date LIKE '%12-25'
+  AND birth_date LIKE '%12-25'
 ORDER BY birth_date ASC, hire_date DESC;
 
 
@@ -69,19 +69,21 @@ WHERE last_name LIKE '%e%'
 ORDER BY emp_no;
 
 
-SELECT  *
+SELECT *
 FROM employees
 WHERE last_name LIKE '%e%'
    OR first_name IN ('Irena', 'Vidya', 'Maya')
-ORDER BY  emp_no DESC, last_name DESC, first_name DESC;
+ORDER BY emp_no DESC, last_name DESC, first_name DESC;
 
 
 
-SELECT last_name FROM employees
+SELECT last_name
+FROM employees
 WHERE last_name LIKE 'E%';
 
 
-SELECT last_name FROM employees
+SELECT last_name
+FROM employees
 WHERE last_name LIKE '%q%';
 
 

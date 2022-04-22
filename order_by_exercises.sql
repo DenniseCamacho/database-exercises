@@ -35,19 +35,21 @@ WHERE last_name LIKE '%e%'
 ORDER BY emp_no;
 
 # Now reverse the sort order for both queries and compare results.
-SELECT  *
+SELECT *
 FROM employees
 WHERE last_name LIKE '%e%'
-OR first_name IN ('Irena', 'Vidya', 'Maya')
-ORDER BY  emp_no DESC, last_name DESC, first_name DESC;
+   OR first_name IN ('Irena', 'Vidya', 'Maya')
+ORDER BY emp_no DESC, last_name DESC, first_name DESC;
 
 
 
-SELECT last_name FROM employees
+SELECT last_name
+FROM employees
 WHERE last_name LIKE 'E%';
 
 # Find all employees with a 'q' in their last name — 1,873 rows.
-SELECT last_name FROM employees
+SELECT last_name
+FROM employees
 WHERE last_name LIKE '%q%';
 
 # Update your query for 'Irena', 'Vidya',
