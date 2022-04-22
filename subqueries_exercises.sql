@@ -47,3 +47,31 @@ WHERE emp_no IN (
     );
 
 # Find all the department names that currently have female managers.
+SELECT dept_no
+FROM dept_manager
+WHERE dept_no IN (
+    SELECT dept_no
+    FROM dept_manager
+    WHERE to_date
+    LIKE '9%'
+AND emp_no IN (
+        SELECT emp_no
+        FROM employees
+        WHERE gender = 'F')
+                  );
+
+# Find the first and last name of the employee with the highest salary.
+SELECT CONCAT(first_name) AS 'first_name',
+       CONCAT(last_name) AS 'last_name'
+FROM employees
+WHERE emp_no IN (
+    SELECT emp_no
+    FROM salaries
+    WHERE to_date
+    LIKE '9%'
+AND salary IN (
+    SELECT MAX(salary)
+    FROM salaries
+               )
+    );
+
