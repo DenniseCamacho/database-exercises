@@ -36,3 +36,14 @@ GROUP BY title;
 #       );
 
 # Find all the current department managers that are female.
+
+SELECT first_name, last_name AS 'Employee Name'
+FROM employees
+WHERE emp_no IN (
+    SELECT emp_no
+    FROM dept_manager
+    WHERE YEAR(to_date) = '9999%'
+    AND gender = 'F'
+    );
+
+# Find all the department names that currently have female managers.
