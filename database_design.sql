@@ -51,3 +51,45 @@ ALTER TABLE quotes
         FOREIGN KEY (author_id)
             REFERENCES authors (id);
 
+
+CREATE TABLE topics
+(
+    id    INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    topic VARCHAR(50),
+    PRIMARY KEY (id)
+);
+
+INSERT INTO topics (topic)
+VALUES ('literature'),
+       ('philosophy'),
+       ('inspiration'),
+       ('hope');
+
+CREATE TABLE quote_topics
+(
+    quote_id INT          NOT NULL,
+    topic_id INT UNSIGNED NOT NULL,
+    CONSTRAINT quote_topics_quote_id_fk FOREIGN KEY (quote_id) REFERENCES quotes (id),
+    CONSTRAINT quote_topics_topic_id_fk FOREIGN KEY (topic_id) REFERENCES topics (id)
+);
+
+INSERT INTO quote_topics (quote_id, topic_id)
+VALUES (1, 2),
+       (1, 3),
+       (2, 2),
+       (2, 3),
+       (3, 1),
+       (3, 2),
+       (4, 1),
+       (4, 3),
+       (5, 3),
+       (5, 4),
+       (6, 3),
+       (6, 4);
+
+SELECT content, author_name AS author
+FROM authors a
+         JOIN quotes q ON a.id = q.author_id
+         JOIN quote_topics qt ON q.id = qt.quote_id
+         JOIN topics t on qt.topic_id = t.id
+WHERE topic = 'literature';

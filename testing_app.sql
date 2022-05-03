@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS testing_app;
+USE testing_app;
+CREATE TABLE IF NOT EXISTS users
+(
+    id    INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    name  VARCHAR(150),
+    email VARCHAR(150)
+
+)
