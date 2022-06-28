@@ -1,5 +1,7 @@
 USE codeup_test_db;
 
+# use select statements before delete to ensure you are selecting the correct
+# information.
 DELETE a.*
 FROM albums a
 WHERE artist = 'One Singer';

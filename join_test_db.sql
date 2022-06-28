@@ -10,3 +10,8 @@ FROM employees
 GROUP BY full_name
 LIMIT 5;
 
+SELECT *
+FROM employees
+WHERE first_name = 'Mary'
+ORDER BY last_name DESC;
+

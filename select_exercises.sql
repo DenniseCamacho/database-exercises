@@ -1,4 +1,8 @@
 USE codeup_test_db;
+ SELECT *
+FROM albums
+WHERE
+
 
 SELECT *
 FROM albums
@@ -36,3 +40,13 @@ WHERE sales < 20000000;
 # FROM albums a
 # where genre like '%Rock%' % is any before any after.. a 'wildcard'
 #makes it not as strict...
+
+SELECT *
+FROM albums
+WHERE artist = 'Michael Jackson';
+
+use employees;
+# SELECT first_name AS 'First Name', last_name AS 'Last Name'
+SELECT *
+FROM employees
+WHERE hire_date > 1980;
